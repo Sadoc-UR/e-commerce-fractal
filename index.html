@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractal Store | Tienda en Línea</title>
+    <link rel="icon" href="https://e-commerce-e2.s3.us-east-1.amazonaws.com/incono_web.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 8px;">
+            <img src="https://e-commerce-e2.s3.us-east-1.amazonaws.com/logo.png" alt="Fractal Logo" style="height: 35px; width: auto; object-fit: contain;">
+            Fractal
+        </a>
+        <div class="nav-links">
+            <a href="cart.html">🛒 <span id="cart-count">0</span></a>
+            <div class="user-menu-container">
+                <div id="user-chip" class="user-chip hidden" style="cursor: pointer;">
+                    <span id="user-avatar" class="user-avatar">U</span>
+                    <span id="user-name" class="user-name">Usuario</span>
+                </div>
+                <!-- Menú desplegable -->
+                <div id="user-dropdown" class="user-dropdown hidden">
+                    <div class="dropdown-info">
+                        <p id="dropdown-name" class="dropdown-name">Usuario</p>
+                        <p id="dropdown-email" class="dropdown-email">usuario@correo.com</p>
+                    </div>
+                    <div class="dropdown-actions">
+                        <button id="orders-btn" class="dropdown-btn" onclick="window.location.href='pedidos.html'">📦 Mis Pedidos</button>
+                        <button id="theme-toggle" class="dropdown-btn">⚙️ Config: Cambiar Tema</button>
+                        <button id="logout-btn" class="dropdown-btn logout-btn">🚪 Cerrar Sesión</button>
+                    </div>
+                </div>
+            </div>
+            <a id="login-btn" href="#">Login</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p id="hero-eyebrow" class="eyebrow">Tu tienda de confianza</p>
+                <h1 id="hero-title">Bienvenido a nuestra plataforma de compras en línea.</h1>
+                <p id="hero-subtitle" class="hero-subtitle">Descubre nuestro amplio catálogo de productos con la mejor calidad y seguridad garantizada en cada transacción.</p>
+                <div class="hero-actions">
+                    <a href="#product-grid" class="btn-primary">Ver catálogo completo</a>
+                    <span class="hero-note">Envíos seguros a todo el país</span>
+                </div>
+            </div>
+            <div class="hero-art">
+                <div class="hero-card" id="featured-card" style="cursor: pointer; padding-bottom: 10px; height: auto;">
+                    <div class="hero-card-title">Destacado del Día</div>
+                    <div id="featured-content">
+                        <!-- Placeholder mientras carga -->
+                        <div class="hero-card-line"></div>
+                        <div class="hero-card-line short"></div>
+                    </div>
+                </div>
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+            </div>
+        </section>
+
+        <section class="controls-section">
+            <input type="text" id="search-bar" placeholder="Buscar productos...">
+            <div id="category-filters" class="filters">
+                <button class="filter-btn active" data-category="Todos">Todos</button>
+                <button class="filter-btn" data-category="Computadoras">Computadoras</button>
+                <button class="filter-btn" data-category="Smartphones">Smartphones</button>
+                <button class="filter-btn" data-category="Audio">Audio</button>
+                <button class="filter-btn" data-category="Accesorios">Accesorios</button>
+                <button class="filter-btn" data-category="Decoración">Decoración</button>
+                <button class="filter-btn" data-category="Iluminación">Iluminación</button>
+            </div>
+        </section>
+
+        <div id="product-grid" class="product-grid">
+            <!-- Productos generados por app.js -->
+        </div>
+    </main>
+
+    <!-- Contenedor para Notificaciones Toast -->
+    <div id="toast-container"></div>
+
+    <footer>
+        <p>&copy; 2026 Fractal Store</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
