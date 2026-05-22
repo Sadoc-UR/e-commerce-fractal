@@ -5,7 +5,7 @@ const currentOrigin = window.location.origin;
 const CONFIG = {
     // --- AWS EC2 / API GATEWAY CONFIGURATION ---
     // Cambia esta URL si usas una nueva instancia EC2, un Application Load Balancer o un API Gateway.
-    API_URL: 'http://52.70.178.103:3000', 
+    API_URL: 'https://52.70.178.103.nip.io', 
     
     // --- AWS COGNITO CONFIGURATION ---
     // Si creas un nuevo grupo de usuarios (User Pool) en Cognito, debes actualizar estas 4 variables:
