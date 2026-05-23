@@ -139,9 +139,13 @@ const auth = {
     },
     login: async () => {
         try {
-            // Construir la URL de Cognito con el parámetro &lang=es para que se muestre en español
-            const loginUrl = `${CONFIG.COGNITO_DOMAIN}/login?client_id=${CONFIG.COGNITO_CLIENT_ID}&response_type=code&redirect_uri=${encodeURIComponent(CONFIG.COGNITO_REDIRECT_URI)}&scope=${encodeURIComponent(CONFIG.COGNITO_SCOPES)}&lang=es`;
-            window.location.href = loginUrl;
+            const manager = await getUserManager();
+            // Pasamos el idioma como un parámetro extra para no romper el flujo de seguridad (PKCE/State)
+            return manager.signinRedirect({
+                extraQueryParams: {
+                    lang: 'es'
+                }
+            });
         } catch (error) {
             console.error('Auth init failed', error);
             return null;
